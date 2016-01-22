@@ -57,7 +57,7 @@ module Crowbar
 
           def path
             filename = Request::Backup::List.new.process do |p|
-              p.parsed_response.select { |s| s["id"] == args.id.to_i }
+              p.parsed_response.select { |s| s["id"] == args.id.to_i || s["name"] == args.id }
             end.first["name"]
             Pathname.new("#{filename}.tar.gz")
           end
