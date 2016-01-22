@@ -25,7 +25,9 @@ module Crowbar
             {
               headers: headers,
               query: {
-                file: attrs.file
+                backup: {
+                  file: attrs.file
+                }
               }
             }
           end
